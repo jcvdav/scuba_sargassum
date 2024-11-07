@@ -85,7 +85,7 @@ poly <- cbind(c(bbox[1], bbox[1], bbox[2], bbox[2], bbox[1]),
   st_transform(crs = "+proj=lcc +lat_0=12 +lon_0=-102 +lat_1=17.5 +lat_2=29.5 +x_0=2500000 +y_0=0")
 
 mex_buf <- st_buffer(mex_crop,
-                     dist = units::as_units(6, "nautical_miles"))
+                     dist = units::as_units(10, "nautical_miles"))
 
 area <- st_intersection(mex_buf, poly) %>% 
   st_intersection(mex_eez) %>% 
